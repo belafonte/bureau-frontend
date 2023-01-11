@@ -1,6 +1,30 @@
 {
   "sections": [
     {
+      "title": "About",
+      "subtitle": "Jan Pistor - Bureau 314",
+      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. Growing up with Commodore 64 and Dreamweaver he became fascinated by the possibilities of technology. Since then he is interested in Web Technologies. Some time later he also added realtime software to his portfolio like TouchDesigner, VVVV or Unity.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Prior to getting self-employed he worked at iart (Basel) a Studio working in the Field of Media Architectures and Exhibition Design.</p><p>Offering the following Services</p>",
+      "table": {
+        "rows": [
+          {
+            "year": ">",
+            "head": "Web Development & Interaction Design",
+            "subhead": "Fullstack with e.g. Astro, Vue, Svelte, Tailwind, Typescript, Cockpit, Strapi and more"
+          },
+          {
+            "year": ">",
+            "head": "Desktop Applications",
+            "subhead": "Based on Web Technologies like Electron and NodeJS"
+          },
+          {
+            "year": ">",
+            "head": "Media Consulting for Exhibitions & Media Programming",
+            "subhead": "TouchDesigner, Blender, After Effects, DMX/ArtNet, NodeRED"
+          }
+        ]
+      }
+    },
+    {
       "title": "E-Learning ZHdK",
       "subtitle": "Website, Frontend",
       "media": {
@@ -17,7 +41,7 @@
           }
         ]
       },
-      "text": "LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age. LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age.",
+      "text": "<p>\"experimental, extended, engaged, equal, epic and endless learning\"</p><p>The use of digital media and end devices are an integral part of everyday life for students and lecturers at the ZHdK. And they also expect this from an educational institution. This self-evident fact should be reflected in the ZHdK's teaching. In doing so, the ZHdK wants to use and shape the dynamics between the digital and physical worlds for development of sustainable concepts.</p><p>Together with Onari Projects from Zurich i was asked to do a rework of the E-Learning Website of the Zurich University of the Arts (ZHdK). Prior to the redesign, the website was basically a simple single page site which was not flexible enough for new digital formats.</p>",
       "gallery": [
         "./projects/elearning/vid_00001.mp4",
         "./projects/elearning/img_00001.png"
@@ -30,13 +54,13 @@
         "path": "./projects/flower-meadow/intro.mp4",
         "video": true,
         "caption": [
-          { "head": "Client", "sub": "LG" },
+          { "head": "Client", "sub": "iart for LG" },
           { "head": "Tech", "sub": "TouchDesigner, Blender" },
           { "head": "Scope", "sub": "Visual Design" },
-          { "head": "Year", "sub": "2021" }
+          { "head": "Year", "sub": "2020" }
         ]
       },
-      "text": "<p>The five kinetic screen sculptures which make up \"Flower Meadow\" consist individually of six flexible OLED screens. They are arranged in petal-like formation and controlled by a complex drive to open like natural blossoms. A spherical soundtrack accompanies the spectacle which is mounted on the ceiling of 180 The Strand in London's West End.</p><p>The five kinetic screen sculptures which make up \"Flower Meadow\" consist individually of six flexible OLED screens. They are arranged in petal-like formation and controlled by a complex drive to open like natural blossoms. A spherical soundtrack accompanies the spectacle which is mounted on the ceiling of 180 The Strand in London's West End.</p>",
+      "text": "<p>The five kinetic screen sculptures which make up a \"Flower Meadow\" consist individually of six flexible OLED screens. They are arranged in petal-like formation and controlled by a complex drive to open like natural blossoms. A spherical soundtrack accompanies the spectacle which is mounted on the ceiling of 180 The Strand in London's West End.</p><p>The visual piece follows the idea of embracing the form of installation itself by using the 3D model it a translucent material capturing virtually placed light sources. This was then mapped on the physical flower installation. During the \"blooming\", basically when the installation opened the flower petals, AI generated Flowers where displayed on the installation.</p><p>The final form was actually discovered while playing around with simple paper flowers. It was a playful explorative workflow. The whole projec t was very ambitious and luckily \"MKT Engineering\" accepted the challenge to work on a minimal design for the \"real\" Flowers.</p>",
       "gallery": [
         "./projects/flower-meadow/vid_00001.mp4",
         "./projects/flower-meadow/img_00001.png",
@@ -62,7 +86,7 @@
           }
         ]
       },
-      "text": "LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age. LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age.",
+      "text": "<p>LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age.</p>",
       "gallery": [
         "./projects/lela/05.png",
         "./projects/lela/06.png",
@@ -130,6 +154,11 @@
       "table": {
         "rows": [
           {
+            "year": 2023,
+            "head": "New Media Operations",
+            "subhead": "TouchDesigner Workshop, at HGK Basel</a>"
+          },
+          {
             "year": 2022,
             "head": "Analog and Physical",
             "subhead": "Web Zurich, Talk together with <a href=\"https://riccardolardi.com/\" target=\"blank\">Riccardo Lardi</a>"
@@ -144,6 +173,7 @@
             "head": "Mediafacade Workshop Korea",
             "subhead": "Workshop together with Valentin Spiess ( <a href=\"https://iart.ch\" target=\"blank\">iart</a> ) at INHA University Korea"
           },
+          {},
           {
             "year": 2020,
             "head": "Agile Methods",
@@ -151,11 +181,6 @@
           }
         ]
       }
-    },
-    {
-      "title": "About",
-      "subtitle": "Jan Pistor - Bureau 314",
-      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. Growing up with Commodore 64 and Dreamweaver he became fascinated by the possibilities of technology. Since then he is interested in Web Technologies. Some time later he also added realtime software to his portfolio like TouchDesigner, VVVV or Unity.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Prior to getting self-employed he worked at iart (Basel) a Studio working in the Field of Media Architectures and Exhibition Design.</p>"
     }
   ]
 }

@@ -1,0 +1,42 @@
+---
+interface Props {
+  rows: { year: string | number; head: string; subhead: string }[] | undefined;
+}
+
+const { rows } = Astro.props;
+---
+
+<table>
+  {
+    rows &&
+      rows.map((row) => (
+        <tr>
+          <td>
+            <h3>{row.year}</h3>
+          </td>
+          <td>
+            <h3>{row.head}</h3>
+            <p set:html={row.subhead} />
+          </td>
+        </tr>
+      ))
+  }
+</table>
+
+<style>
+  table {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+  }
+  table * {
+    color: white !important;
+  }
+
+  tr td:first-child {
+    padding-right: 2rem;
+  }
+
+  tr {
+    vertical-align: top;
+  }
+</style>

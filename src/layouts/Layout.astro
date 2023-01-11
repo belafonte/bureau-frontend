@@ -1,13 +1,3 @@
----
-export interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
----
-
-<script></script>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,26 +5,145 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Bureau 314 - Investigation into Space</title>
-    <description
-      >Software Development and interaction Design Studio in Basel Switzerland</description
-    >
   </head>
+
   <body>
     <slot />
   </body>
 </html>
 <style is:global>
+  @import url(../reset.css);
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: bold;
+  }
+  @font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Roboto Slab";
+    src: url("fonts/RobotoSlab-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   :root {
     --blue: #14529e;
     --light-blue: #8eb0d9;
     --orange: #f46b08;
   }
+
   html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
+    font-family: Open Sans, sans-serif;
+    background-color: var(--blue);
+    box-sizing: border-box;
   }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+
+  h1,
+  h2,
+  .utext {
+    display: inline-block;
+    font-family: Open Sans;
+    color: white;
+    box-shadow: inset 0 -1rem 0 0 var(--orange);
+    height: 1.5rem;
+    line-height: 1;
+    font-size: 1rem;
+  }
+
+  p {
+    font-family: Roboto Slab;
+    color: white;
+
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  article {
+    width: 100%;
+    display: block;
+  }
+
+  h1 {
+    margin-top: 1rem;
+  }
+
+  h2 {
+    font-size: 0.8rem !important;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .heading > * {
+    display: block;
+    max-width: fit-content;
+  }
+
+  .caption,
+  table {
+    color: var(--light-blue);
+    font-size: 0.65rem;
+    line-height: 1rem;
+    letter-spacing: 0.05em;
+
+    margin-bottom: 2rem;
+  }
+
+  .caption h3,
+  table h3 {
+    font-family: Open Sans;
+    font-weight: bold;
+  }
+
+  .caption p,
+  table p {
+    font-family: Open Sans;
+    font-style: italic;
+    letter-spacing: unset;
+    color: var(--light-blue);
+  }
+
+  .section-end {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    font-family: Open Sans !important;
+    font-size: 0.75rem !important;
+    border: none;
+    background: unset;
+    /* color: var(--orange); */
+    color: white;
+    cursor: pointer;
+  }
+
+  a {
+    color: unset;
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-underline-offset: 3px;
+  }
+
+  a:visited {
+    color: unset;
   }
 </style>

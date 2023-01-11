@@ -1,0 +1,180 @@
+---
+interface Props {
+  caption: { head: string; sub: string }[] | undefined;
+  slides: string[] | undefined;
+}
+const { slides, caption } = Astro.props;
+---
+
+<!-- Wrap the component elements in our custom element “astro-heart”. -->
+<image-slider>
+  <section class="slides">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      {
+        slides &&
+          slides.map((slide) => (
+            <img class="swiper-slide" src={slide} alt="Gallery Item" />
+          ))
+      }
+    </div>
+    <!-- <section class="controls">
+      <div class="prev">
+        <img src="./arrow-left.svg" />
+      </div>
+      <div class="next">
+        <img src="./arrow-right.svg" />
+      </div>
+    </section> -->
+    <section class="pagination"></section>
+  </section>
+</image-slider>
+
+<div class="caption">
+  {
+    caption &&
+      caption.map((item) => (
+        <>
+          <h3>{item.head}</h3>
+          <p set:html={item.sub} />
+        </>
+      ))
+  }
+</div>
+
+<script>
+  import Swiper, { Navigation, Pagination } from "swiper";
+  // import Swiper and modules styles
+  import "swiper/css";
+  import "swiper/css/pagination";
+
+  // Define the behaviour for our new type of HTML element.
+  class Slider extends HTMLElement {
+    constructor() {
+      super();
+
+      let swiper: null | Swiper = null;
+      swiper = new Swiper("image-slider .slides", {
+        // configure Swiper to use modules
+        modules: [Navigation, Pagination],
+
+        // If we need pagination
+        pagination: {
+          el: ".pagination",
+          clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+      });
+
+      // console.log(swiper);
+    }
+  }
+
+  customElements.define("image-slider", Slider);
+</script>
+
+<style>
+  image-slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    background-color: white;
+    margin-bottom: 1rem;
+
+    background-color: var(--blue);
+  }
+
+  .controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+  }
+
+  section {
+    display: block;
+  }
+
+  .prev,
+  .next {
+    background-color: white;
+    display: inline-flex;
+    height: 2.5rem;
+    padding: 0.65rem 0.3rem;
+    transform: translateY(50%);
+    cursor: pointer;
+  }
+
+  .prev {
+    margin-left: -0.5rem;
+  }
+
+  .next {
+    margin-left: auto;
+    margin-right: -0.5rem;
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  .pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    z-index: 20;
+    width: auto !important;
+    display: block;
+  }
+</style>
+
+<style is:global>
+  .swiper-pagination-bullet {
+    all: unset;
+    display: inline-block;
+    width: 1rem;
+    height: 0.3rem;
+    background-color: white;
+    border-radius: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--orange) !important;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: unset;
+    bottom: unset;
+  }
+  .swiper-slide {
+    width: unset;
+    height: auto;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string | null;
+  text?: string | null;
+  media?: {
+    path: string;
+    video: boolean;
+    caption: [{ head: string; sub: string }];
+  };
+}
+
+const { title, subtitle = null, media, text = null } = Astro.props;
+---
+
+<section>
+  <article>
+    <div class="heading">
+      <h1>{title}</h1>
+      {subtitle !== null && <h2>{subtitle}</h2>}
+    </div>
+    <slot name="media" />
+    <slot name="table" />
+    {
+      text !== null && (
+        <div class="text">
+          <p class="serif text" set:html={text} />
+        </div>
+      )
+    }
+    <slot name="gallery" />
+  </article>
+  <div class="section-end">
+    <img src="./wave-small.svg" />
+  </div>
+</section>
+
+<style>
+  .text {
+    margin-bottom: 3rem;
+  }
+
+  section {
+    width: 100%;
+    display: inline-block;
+  }
+</style>

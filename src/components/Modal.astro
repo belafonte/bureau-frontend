@@ -1,0 +1,48 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<dialog id={id}>
+  <form method="dialog">
+    <button><strong>close me</strong></button>
+  </form>
+  <slot />
+</dialog>
+
+<style>
+  button {
+    float: right;
+    font-size: 2rem !important;
+    color: var(--orange) !important;
+  }
+  dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.5rem solid var(--orange);
+    background-color: var(--blue);
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 800px;
+  }
+
+  @media screen and (max-width: 768px) {
+    dialog {
+      width: 90%;
+    }
+  }
+
+  dialog::backdrop {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+</style>

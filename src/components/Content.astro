@@ -1,0 +1,63 @@
+---
+import Section from "@components/Section.astro";
+import Table from "@components/Table.astro";
+import Slider from "@components/Slider.astro";
+import Gallery from "@components/Gallery.astro";
+import MediaElement from "./MediaElement.astro";
+import Media from "@components/Media.astro";
+
+import data from "@assets/data.json";
+---
+
+<main>
+  {
+    data.sections.map((section) => (
+      <Section
+        title={section.title}
+        subtitle={section.subtitle}
+        text={section.text}
+      >
+        {section.hasOwnProperty("media") && section.media && (
+          <MediaElement
+            slot="media"
+            path={section.media.path}
+            video={section.media.video}
+            caption={section.media.caption}
+          />
+        )}
+        {section.hasOwnProperty("table") && section.table && (
+          <Table slot="table" rows={section.table.rows} />
+        )}
+        {section.hasOwnProperty("gallery") && (
+          // <Gallery slot="gallery" images={section.gallery} />
+          <Media slot="gallery" media={section.gallery} />
+        )}
+      </Section>
+    ))
+  }
+</main>
+
+<style>
+  main {
+    margin: auto;
+    max-width: 1024px;
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 10%;
+    padding: 0 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      margin: auto;
+      max-width: 100%;
+      column-count: 1;
+      column-gap: 0rem;
+
+      padding: 0 1rem;
+    }
+  }
+  .spacer {
+    margin-top: 10rem;
+  }
+</style>

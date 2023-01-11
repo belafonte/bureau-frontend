@@ -1,0 +1,103 @@
+---
+import Modal from "@components/Modal.astro";
+interface Props {
+  path: string | undefined;
+  video: boolean | undefined;
+  caption: { head: string; sub: string }[] | undefined;
+}
+
+const { path, caption } = Astro.props;
+---
+
+<media-element>
+  {
+    path && /(.jpe?g|.png|.gif)/.test(path) ? (
+      <img class="item" src={path} />
+    ) : (
+      <video
+        class="item"
+        src={path}
+        autoplay="autoplay"
+        muted="muted"
+        loop="loop"
+      />
+    )
+  }
+
+  <div class="caption">
+    {
+      caption &&
+        caption.map((item) => (
+          <div class="item">
+            <h3>{item.head}</h3>
+            <p set:html={item.sub} />
+          </div>
+        ))
+    }
+  </div>
+
+  <Modal id="largeContainer">
+    <div class="container">
+      <img id="largeImage" />
+      <video id="largeVideo" controls="controls" muted="muted"></video>
+    </div>
+  </Modal>
+</media-element>
+
+<!-- {
+  path && video ? (
+    <video src={path} autoplay="autoplay" muted="muted" loop="loop" />
+  ) : (
+    <img src={path} />
+  )
+} -->
+
+<script>
+  class MediaElement extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const observer = new IntersectionObserver(this.handleIntersection, {
+        threshold: 1,
+      });
+
+      const modal: HTMLDialogElement | null =
+        this.querySelector("#largeContainer");
+
+      const targetImage: HTMLImageElement | null =
+        this.querySelector("#largeImage");
+
+      const targetVideo: HTMLImageElement | null =
+        this.querySelector("#largeVideo");
+
+      if (!(targetImage && targetVideo)) {
+        return new Error("Cannot Find Targets");
+      }
+
+      observer.observe(this);
+    }
+
+    handleIntersection(
+      entries: IntersectionObserverEntry[],
+      observer: IntersectionObserver
+    ) {
+      console.log(entries);
+    }
+  }
+  customElements.define("media-element", MediaElement);
+</script>
+
+<style>
+  .caption {
+    margin-top: 1rem;
+    column-count: 2;
+  }
+
+  .item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+</style>

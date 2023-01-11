@@ -1,18 +1,35 @@
-<section>
+<section class="intro">
   <img src="./logo.svg" />
-  <p class="utext">Experiences, Web and New Media</p>
-  <p class="utext">Software Development &shy; and Interaction Design</p>
-  <p class="utext">hello[at]bureau314[dot]ch</p>
+  <h1>Experiences, Web and New Media</h1>
+  <h1>Software Development &shy; and Interaction Design</h1>
+  <h1>hello[at]bureau314[dot]ch</h1>
+  <button id="arrowDownBtn">
+    <img class="bounce" src="./arrow-down.svg" />
+  </button>
 </section>
 
+<script>
+  const arrowDownBtn =
+    document.querySelector<HTMLButtonElement>("#arrowDownBtn");
+
+  arrowDownBtn?.addEventListener("click", () => {
+    window.scroll({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
 <style>
-  section {
+  section.intro {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
+
+    border-bottom: 1px dashed var(--orange);
   }
 
   p:first-of-type {
@@ -20,11 +37,35 @@
   }
 
   img {
-    height: 50vh;
+    height: auto;
+    padding: 0 2rem;
   }
 
-  p {
-    font-weight: bold;
-    margin: 0.25rem 0;
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 0.8rem;
+    }
+  }
+
+  #arrowDownBtn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2rem;
+    /* border-bottom: 1px dashed var(--orange); */
+  }
+
+  .bounce {
+    animation: bounce 2s ease infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

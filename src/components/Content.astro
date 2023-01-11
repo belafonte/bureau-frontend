@@ -1,15 +1,14 @@
 ---
 import Section from "@components/Section.astro";
 import Table from "@components/Table.astro";
-import Slider from "@components/Slider.astro";
 import Gallery from "@components/Gallery.astro";
 import MediaElement from "./MediaElement.astro";
-import Media from "@components/Media.astro";
 
 import data from "@assets/data.json";
 ---
 
 <main>
+  <div class="spacer"></div>
   {
     data.sections.map((section) => (
       <Section
@@ -21,7 +20,6 @@ import data from "@assets/data.json";
           <MediaElement
             slot="media"
             path={section.media.path}
-            video={section.media.video}
             caption={section.media.caption}
           />
         )}
@@ -29,8 +27,7 @@ import data from "@assets/data.json";
           <Table slot="table" rows={section.table.rows} />
         )}
         {section.hasOwnProperty("gallery") && (
-          // <Gallery slot="gallery" images={section.gallery} />
-          <Media slot="gallery" media={section.gallery} />
+          <Gallery slot="gallery" media={section.gallery} />
         )}
       </Section>
     ))
@@ -42,9 +39,12 @@ import data from "@assets/data.json";
     margin: auto;
     max-width: 1024px;
     column-count: 2;
-    column-fill: balance;
     column-gap: 10%;
-    padding: 0 2rem;
+    padding: 8rem 2rem;
+  }
+
+  .spacer {
+    margin-top: 10rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -56,8 +56,9 @@ import data from "@assets/data.json";
 
       padding: 0 1rem;
     }
-  }
-  .spacer {
-    margin-top: 10rem;
+
+    .spacer {
+      margin-top: 0;
+    }
   }
 </style>

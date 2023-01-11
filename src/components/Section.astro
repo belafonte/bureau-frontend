@@ -20,14 +20,9 @@ const { title, subtitle = null, media, text = null } = Astro.props;
       {subtitle !== null && <h2>{subtitle}</h2>}
     </div>
     <slot name="media" />
+    <!-- <slot name="text"></slot> -->
+    {text !== null && <div class="project-description serif" set:html={text} />}
     <slot name="table" />
-    {
-      text !== null && (
-        <div class="text">
-          <p class="serif text" set:html={text} />
-        </div>
-      )
-    }
     <slot name="gallery" />
   </article>
   <div class="section-end">
@@ -36,12 +31,27 @@ const { title, subtitle = null, media, text = null } = Astro.props;
 </section>
 
 <style>
-  .text {
-    margin-bottom: 3rem;
+  :global(div.project-description p) {
+    margin-bottom: 1rem;
+  }
+  :global(div.project-description p:last-child) {
+    margin-bottom: 1rem;
   }
 
   section {
     width: 100%;
     display: inline-block;
+  }
+  .section-end {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-end {
+      margin-bottom: 5rem;
+    }
   }
 </style>

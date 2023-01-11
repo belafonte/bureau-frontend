@@ -2,11 +2,12 @@
 import Modal from "@components/Modal.astro";
 interface Props {
   path: string | undefined;
-  video: boolean | undefined;
-  caption: { head: string; sub: string }[] | undefined;
+  caption?: { head: string; sub: string }[] | undefined;
 }
 
 const { path, caption } = Astro.props;
+
+// let media = new
 ---
 
 <media-element>
@@ -14,43 +15,31 @@ const { path, caption } = Astro.props;
     path && /(.jpe?g|.png|.gif)/.test(path) ? (
       <img class="item" src={path} />
     ) : (
-      <video
-        class="item"
-        src={path}
-        autoplay="autoplay"
-        muted="muted"
-        loop="loop"
-      />
+      <video class="item" src={path} autoplay loop muted playsinline />
     )
   }
 
-  <div class="caption">
-    {
-      caption &&
-        caption.map((item) => (
-          <div class="item">
-            <h3>{item.head}</h3>
-            <p set:html={item.sub} />
-          </div>
-        ))
-    }
-  </div>
+  {
+    caption && (
+      <div class="caption">
+        {caption &&
+          caption.map((item) => (
+            <div class="item">
+              <h3>{item.head}</h3>
+              <p set:html={item.sub} />
+            </div>
+          ))}
+      </div>
+    )
+  }
 
-  <Modal id="largeContainer">
-    <div class="container">
-      <img id="largeImage" />
-      <video id="largeVideo" controls="controls" muted="muted"></video>
+  <Modal id="modal">
+    <div id="slot">
+      <!-- <img id="largeImage" />
+      <video id="largeVideo" controls="controls" muted="muted"></video> -->
     </div>
   </Modal>
 </media-element>
-
-<!-- {
-  path && video ? (
-    <video src={path} autoplay="autoplay" muted="muted" loop="loop" />
-  ) : (
-    <img src={path} />
-  )
-} -->
 
 <script>
   class MediaElement extends HTMLElement {
@@ -60,30 +49,48 @@ const { path, caption } = Astro.props;
 
     connectedCallback() {
       const observer = new IntersectionObserver(this.handleIntersection, {
-        threshold: 1,
+        threshold: 0.9,
       });
 
-      const modal: HTMLDialogElement | null =
-        this.querySelector("#largeContainer");
+      const modal: HTMLDialogElement | null = this.querySelector("#modal");
 
-      const targetImage: HTMLImageElement | null =
-        this.querySelector("#largeImage");
+      const slot: HTMLElement | null = this.querySelector("#slot");
 
-      const targetVideo: HTMLImageElement | null =
-        this.querySelector("#largeVideo");
+      // const targetImage: HTMLImageElement | null =
+      //   this.querySelector("#largeImage");
 
-      if (!(targetImage && targetVideo)) {
-        return new Error("Cannot Find Targets");
+      // const targetVideo: HTMLImageElement | null =
+      //   this.querySelector("#largeVideo");
+
+      const mediaElm = this.querySelector<HTMLMediaElement>("img, video");
+
+      if (!(slot && mediaElm)) {
+        return new Error("Cannot Find Target and Media Nodes");
       }
 
-      observer.observe(this);
+      if (mediaElm.tagName === "VIDEO") {
+        observer.observe(mediaElm);
+      }
+
+      mediaElm.addEventListener("click", () => {
+        if (mediaElm.tagName === "IMG") {
+          slot.innerHTML = `<img src=${mediaElm.src} alt="Large Image" style="object-fit: contain" />`;
+          // targetImage.src = mediaElm.src;
+        } else {
+          slot.innerHTML = `<video src=${mediaElm.src} alt="Large Image" controls muted style="object-fit: contain"></video>`;
+          // targetVideo.src = mediaElm.src;
+        }
+        modal?.showModal();
+      });
     }
 
-    handleIntersection(
-      entries: IntersectionObserverEntry[],
-      observer: IntersectionObserver
-    ) {
-      console.log(entries);
+    handleIntersection(entries: IntersectionObserverEntry[]) {
+      const firstEntry = entries[0];
+      if (firstEntry.isIntersecting) {
+        (firstEntry.target as HTMLMediaElement).play();
+      } else {
+        (firstEntry.target as HTMLMediaElement).pause();
+      }
     }
   }
   customElements.define("media-element", MediaElement);
@@ -99,5 +106,12 @@ const { path, caption } = Astro.props;
     display: inline-block;
     width: 100%;
     margin-bottom: 0.25rem;
+    cursor: pointer;
+  }
+
+  #slot {
+    max-height: 70vh;
+    display: flex;
+    justify-content: center;
   }
 </style>

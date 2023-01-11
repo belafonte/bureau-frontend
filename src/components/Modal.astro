@@ -7,35 +7,77 @@ const { id } = Astro.props;
 ---
 
 <dialog id={id}>
-  <form method="dialog">
-    <button><strong>close me</strong></button>
-  </form>
-  <slot />
+  <header></header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <form method="dialog">
+      <button><strong>close</strong></button>
+    </form>
+  </footer>
 </dialog>
 
 <style>
+  header {
+    height: 2rem;
+    /* background-color: var(--orange); */
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 1rem;
+  }
+
+  main {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   button {
-    float: right;
-    font-size: 2rem !important;
-    color: var(--orange) !important;
+    /* margin: 0.5rem;
+    float: right; */
+    /* font-size: 2rem !important; */
+    /* color: var(--blue) !important;
+    font-weight: bold; */
+
+    border-radius: 9999px;
+    /* border: 2px solid var(--orange); */
+    background-color: var(--orange);
+    color: var(--blue);
+    padding: 1rem;
+    width: 10rem;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   dialog {
     position: fixed;
+    max-height: 80vh;
+    max-width: 1280px;
+
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 0.5rem solid var(--orange);
-    background-color: var(--blue);
-    padding: 1rem;
-    border-radius: 1rem;
-    max-width: 800px;
+    border: 0rem solid var(--orange);
+    /* background-color: var(--blue); */
+    background-color: rgba(0, 0, 0, 0);
+    /* padding: 1rem; */
+    /* border-radius: 1rem; */
+    margin: 0;
+    padding: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     dialog {
       width: 90%;
-    }
-  }
+    } */
+  /* } */
 
   dialog::backdrop {
     position: fixed;
@@ -43,6 +85,8 @@ const { id } = Astro.props;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
   }
 </style>

@@ -1,8 +1,8 @@
 <section class="intro">
-  <img src="./logo.svg" />
+  <img class="logo" src="./logo.svg" />
   <h1>Experiences, Web and New Media</h1>
   <h1>Software Development &shy; and Interaction Design</h1>
-  <h1>hello[at]bureau314[dot]ch</h1>
+  <h1><a href="mailto:hello@bureau314.ch">hello[at]bureau314[dot]ch</a></h1>
   <button id="arrowDownBtn">
     <img class="bounce" src="./arrow-down.svg" />
   </button>
@@ -15,7 +15,6 @@
   arrowDownBtn?.addEventListener("click", () => {
     window.scroll({
       top: window.innerHeight,
-      left: 0,
       behavior: "smooth",
     });
   });
@@ -25,7 +24,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     justify-content: center;
     align-items: center;
 
@@ -36,7 +35,7 @@
     margin-top: 2rem;
   }
 
-  img {
+  .logo {
     height: auto;
     padding: 0 2rem;
   }
@@ -44,6 +43,10 @@
   @media screen and (max-width: 768px) {
     h1 {
       font-size: 0.8rem;
+    }
+
+    .logo {
+      width: 75vw;
     }
   }
 

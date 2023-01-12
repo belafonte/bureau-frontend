@@ -1,6 +1,10 @@
 ---
 interface Props {
-  rows: { year: string | number; head: string; subhead: string }[];
+  rows: {
+    year?: string | number;
+    head?: string;
+    subhead?: string;
+  }[];
 }
 
 const { rows } = Astro.props;

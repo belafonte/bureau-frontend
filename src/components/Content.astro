@@ -16,19 +16,15 @@ import data from "@assets/data.json";
         subtitle={section.subtitle}
         text={section.text}
       >
-        {section.hasOwnProperty("media") && section.media && (
+        {section.media && (
           <MediaElement
             slot="media"
             path={section.media.path}
             caption={section.media.caption}
           />
         )}
-        {section.hasOwnProperty("table") && section.table && (
-          <Table slot="table" rows={section.table.rows} />
-        )}
-        {section.hasOwnProperty("gallery") && (
-          <Gallery slot="gallery" media={section.gallery} />
-        )}
+        {section.table && <Table slot="table" rows={section.table.rows} />}
+        {section.gallery && <Gallery slot="gallery" media={section.gallery} />}
       </Section>
     ))
   }
@@ -44,7 +40,7 @@ import data from "@assets/data.json";
   }
 
   .spacer {
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -58,7 +54,7 @@ import data from "@assets/data.json";
     }
 
     .spacer {
-      margin-top: 0;
+      margin-top: 4rem;
     }
   }
 </style>

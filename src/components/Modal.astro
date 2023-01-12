@@ -6,24 +6,61 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<dialog id={id}>
-  <header></header>
-  <main>
-    <slot />
-  </main>
-  <footer>
-    <form method="dialog">
-      <button><strong>close</strong></button>
-    </form>
-  </footer>
-</dialog>
+<site-modal>
+  <dialog id={id}>
+    <header></header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <form method="dialog">
+        <button><strong>close</strong></button>
+      </form>
+    </footer>
+  </dialog>
+</site-modal>
+
+<script>
+  class Modal extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const dialog = this.querySelector<HTMLDialogElement>("dialog");
+
+      const config = { attributes: true, childList: false, subtree: false };
+
+      if (!dialog) return new Error("Dialog or Html Element not found");
+
+      const callback: MutationCallback = (mutationList) => {
+        for (const mutation of mutationList) {
+          if (mutation.attributeName !== "open") return;
+
+          const isOpen = dialog.hasAttribute("open");
+
+          if (isOpen) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "auto";
+          }
+        }
+      };
+
+      const observer = new MutationObserver(callback);
+      observer.observe(dialog, config);
+    }
+  }
+  customElements.define("site-modal", Modal);
+</script>
 
 <style>
   header {
-    height: 2rem;
+    height: 0rem;
     /* background-color: var(--orange); */
     background-color: rgba(0, 0, 0, 0);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    margin: 0;
   }
 
   main {
@@ -73,11 +110,11 @@ const { id } = Astro.props;
     padding: 0;
   }
 
-  /* @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     dialog {
-      width: 90%;
-    } */
-  /* } */
+      max-height: 100dvh;
+    }
+  }
 
   dialog::backdrop {
     position: fixed;

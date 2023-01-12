@@ -3,13 +3,13 @@
     {
       "title": "About",
       "subtitle": "Jan Pistor - Bureau 314",
-      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. Growing up with Commodore 64 and Dreamweaver he became fascinated by the possibilities of technology. Since then he is interested in Web Technologies. Some time later he also added realtime software to his portfolio like TouchDesigner, VVVV or Unity.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Prior to getting self-employed he worked at iart (Basel) a Studio working in the Field of Media Architectures and Exhibition Design.</p><p>Offering the following Services</p>",
+      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. Growing up with a Commodore 64 and software like Dreamweaver and Photoshop 6 he became fascinated by the possibilities of technology. Since then he is interested in the web and some time later he added realtime software to his portfolio like TouchDesigner, VVVV or Unity.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Prior to getting self-employed he worked at iart (Basel) a Studio working in the Field of Media Architectures and Exhibition Design.</p><p>Offering the following Services</p>",
       "table": {
         "rows": [
           {
             "year": ">",
             "head": "Web Development & Interaction Design",
-            "subhead": "Fullstack with e.g. Astro, Vue, Svelte, Tailwind, Typescript, Cockpit, Strapi and more"
+            "subhead": "Astro, Vue, Svelte, Tailwind, Typescript, Cockpit, Strapi and more"
           },
           {
             "year": ">",
@@ -19,7 +19,7 @@
           {
             "year": ">",
             "head": "Media Consulting for Exhibitions & Media Programming",
-            "subhead": "TouchDesigner, Blender, After Effects, DMX/ArtNet, NodeRED"
+            "subhead": "TouchDesigner, Unity, Blender, After Effects, DMX/ArtNet, NodeRED"
           }
         ]
       }

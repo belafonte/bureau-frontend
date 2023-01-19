@@ -13,7 +13,7 @@ export interface Props {
 const { title, subtitle = null, media, text = null } = Astro.props;
 ---
 
-<section>
+<page-section>
   <article>
     <div class="heading">
       <h1>{title}</h1>
@@ -28,7 +28,30 @@ const { title, subtitle = null, media, text = null } = Astro.props;
   <div class="section-end">
     <img src="./wave-small.svg" />
   </div>
-</section>
+</page-section>
+
+<script>
+  class PageSection extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const observer = new IntersectionObserver(this.handleIntersection, {
+        threshold: 0.1,
+      });
+      observer.observe(this);
+    }
+
+    handleIntersection(entries: IntersectionObserverEntry[]) {
+      const firstEntry = entries[0];
+      if (firstEntry.isIntersecting) {
+        firstEntry.target.classList.add("fadeIn");
+      }
+    }
+  }
+  customElements.define("page-section", PageSection);
+</script>
 
 <style>
   :global(div.project-description p) {
@@ -38,10 +61,32 @@ const { title, subtitle = null, media, text = null } = Astro.props;
     margin-bottom: 1rem;
   }
 
-  section {
+  page-section {
     width: 100%;
     display: inline-block;
+    translate: 0 -30px;
+    opacity: 0;
   }
+
+  page-section.fadeIn {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+    animation-timing-function: ease;
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      translate: 0 -30px;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
   .section-end {
     display: flex;
     justify-content: center;

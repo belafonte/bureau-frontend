@@ -6,8 +6,6 @@ interface Props {
 }
 
 const { path, caption } = Astro.props;
-
-// let media = new
 ---
 
 <media-element>
@@ -49,11 +47,10 @@ const { path, caption } = Astro.props;
 
     connectedCallback() {
       const observer = new IntersectionObserver(this.handleIntersection, {
-        threshold: 0.9,
+        threshold: 0.8,
       });
 
       const modal: HTMLDialogElement | null = this.querySelector("#modal");
-
       const slot: HTMLElement | null = this.querySelector("#slot");
 
       // const targetImage: HTMLImageElement | null =

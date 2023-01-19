@@ -39,24 +39,28 @@
     src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: "Open Sans";
     src: url("/fonts/OpenSans-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: bold;
+    font-display: swap;
   }
   @font-face {
     font-family: "Open Sans";
     src: url("/fonts/OpenSans-LightItalic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
   }
   @font-face {
     font-family: "Roboto Slab";
     src: url("/fonts/RobotoSlab-Light.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   :root {
@@ -96,6 +100,12 @@
     font-size: 0.75rem;
     line-height: 1.2rem;
     letter-spacing: 0.05em;
+  }
+
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 0.8rem;
+    }
   }
 
   article {

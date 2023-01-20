@@ -3,13 +3,15 @@ import MediaElement from "@components/MediaElement.astro";
 
 interface Props {
   media: string[] | undefined;
+  caption?: string;
 }
 
-const { media } = Astro.props;
+const { media, caption } = Astro.props;
 ---
 
 <section class="gallery">
   {media && media.map((item) => <MediaElement path={item} />)}
+  {caption && <p class="caption">{caption}</p>}
 </section>
 
 <style>

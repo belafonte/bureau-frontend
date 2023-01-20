@@ -24,7 +24,13 @@ import data from "@assets/data.json";
           />
         )}
         {section.table && <Table slot="table" rows={section.table.rows} />}
-        {section.gallery && <Gallery slot="gallery" media={section.gallery} />}
+        {section.gallery && (
+          <Gallery
+            slot="gallery"
+            media={section.gallery.media}
+            caption={section.gallery.caption}
+          />
+        )}
       </Section>
     ))
   }

@@ -3,7 +3,7 @@
     {
       "title": "About",
       "subtitle": "Jan Pistor - Bureau 314",
-      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. Growing up with a Commodore 64 and software like Dreamweaver and Photoshop 6 he became fascinated by the possibilities of technology. Since then he is interested in the web and some time later he added realtime software to his portfolio like TouchDesigner, VVVV or Unity.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Prior to getting self-employed he worked at iart (Basel) a Studio working in the Field of Media Architectures and Exhibition Design.</p><p>Offering the following Services</p>",
+      "text": "<p>Jan Pistor is Software Developer and Interaction Designer. He likes RegEx, VIM and Enzo Maari. At the moment exploring web technologies and woodworking.</p><p><i>Nature is not using Pi - Buckminster Fuller</i></p></br><p>Prior to getting self-employed he worked at iart (Basel CH) a studio working in the field of \"Media Architectures\" and Exhibition Design. There he was working on international large scale projects mostly using realtime software. Furthermore he co-created a software architecture for video playout during his time there.</p><p>He holds a Bachelor of Science in Media Informatics and a Master of Arts in Interaction Design.</p><p>Feel free to contact me via <a href=\"mailto:hello@bureau314.ch\">hello@bureau314.ch</a><p>Offering the following Services</p>",
       "table": {
         "rows": [
           {
@@ -19,7 +19,7 @@
           {
             "year": ">",
             "head": "Media Consulting for Exhibitions & Media Programming",
-            "subhead": "TouchDesigner, Unity, Blender, After Effects, DMX/ArtNet, NodeRED"
+            "subhead": "Spatial Interaction, Planning, TouchDesigner, Unity, Blender, After Effects"
           }
         ]
       }
@@ -31,10 +31,22 @@
         "path": "./projects/elearning/01.png",
         "video": false,
         "caption": [
-          { "head": "Partner", "sub": "ZHDK E-Learning Department" },
-          { "head": "Tech", "sub": "SvelteKit, CockpitCMS" },
-          { "head": "Scope", "sub": "Frontend & Backend" },
-          { "head": "Year", "sub": "2020 - 2021" },
+          {
+            "head": "Partner",
+            "sub": "ZHDK E-Learning Department"
+          },
+          {
+            "head": "Tech",
+            "sub": "SvelteKit, CockpitCMS"
+          },
+          {
+            "head": "Scope",
+            "sub": "Frontend & Backend"
+          },
+          {
+            "head": "Year",
+            "sub": "2020 - 2021"
+          },
           {
             "head": "Link",
             "sub": "<a href='https://lela.ch' target='blank'>Website</a>"
@@ -42,10 +54,13 @@
         ]
       },
       "text": "<p>\"experimental, extended, engaged, equal, epic and endless learning\"</p><p>The use of digital media and end devices are an integral part of everyday life for students and lecturers at the ZHdK. And they also expect this from an educational institution. This self-evident fact should be reflected in the ZHdK's teaching. In doing so, the ZHdK wants to use and shape the dynamics between the digital and physical worlds for development of sustainable concepts.</p><p>Together with Onari Projects from Zurich i was asked to do a rework of the E-Learning Website of the Zurich University of the Arts (ZHdK). Prior to the redesign, the website was basically a simple single page site which was not flexible enough for new digital formats.</p>",
-      "gallery": [
-        "./projects/elearning/vid_00001.mp4",
-        "./projects/elearning/img_00001.png"
-      ]
+      "gallery": {
+        "caption": "All media courtesy Bureau 314",
+        "media": [
+          "./projects/elearning/vid_00001.mp4",
+          "./projects/elearning/img_00001.png"
+        ]
+      }
     },
     {
       "title": "LG Flower Meadow",
@@ -54,20 +69,35 @@
         "path": "./projects/flower-meadow/intro.mp4",
         "video": true,
         "caption": [
-          { "head": "Client", "sub": "iart for LG" },
-          { "head": "Tech", "sub": "TouchDesigner, Blender" },
-          { "head": "Scope", "sub": "Visual Design" },
-          { "head": "Year", "sub": "2020" }
+          {
+            "head": "Client",
+            "sub": "iart AG"
+          },
+          {
+            "head": "Tech",
+            "sub": "TouchDesigner, Blender"
+          },
+          {
+            "head": "Scope",
+            "sub": "Visual Design"
+          },
+          {
+            "head": "Year",
+            "sub": "2020"
+          }
         ]
       },
-      "text": "<p>The five kinetic screen sculptures which make up a \"Flower Meadow\" consist individually of six flexible OLED screens. They are arranged in petal-like formation and controlled by a complex drive to open like natural blossoms. A spherical soundtrack accompanies the spectacle which is mounted on the ceiling of 180 The Strand in London's West End.</p><p>The visual piece follows the idea of embracing the form of installation itself by using the 3D model it a translucent material capturing virtually placed light sources. This was then mapped on the physical flower installation. During the \"blooming\", basically when the installation opened the flower petals, AI generated Flowers where displayed on the installation.</p><p>The final form was actually discovered while playing around with simple paper flowers. It was a playful explorative workflow. The whole projec t was very ambitious and luckily \"MKT Engineering\" accepted the challenge to work on a minimal design for the \"real\" Flowers.</p>",
-      "gallery": [
-        "./projects/flower-meadow/vid_00001.mp4",
-        "./projects/flower-meadow/img_00001.png",
-        "./projects/flower-meadow/img_00002.png",
-        "./projects/flower-meadow/img_00005.png",
-        "./projects/flower-meadow/img_00003.png"
-      ]
+      "text": "<p>\"LG Flower Meadow\" is a piece created by iart for LG. The piece consists out of five kinetic screen sculptures, whereas each screen sculpture has six flexible OLED screens. Together they form the \"Flower Meadow\" They are arranged in petal-like formation and controlled by a complex drive to open like natural blossoms. A spherical soundtrack accompanies the spectacle which is mounted on the ceiling of 180 The Strand in London's West End.</p><p>The visual piece follows the idea of embracing the form of installation itself by using the 3D model it a translucent material capturing virtually placed light sources. This was then mapped on the physical flower installation. During the \"blooming\", basically when the installation opened the flower petals, AI generated Flowers where displayed on the installation.</p><p>The final form was actually discovered while playing around with simple paper flowers. It was a playful explorative workflow. The whole project was very ambitious and luckily \"MKT Engineering\" accepted the challenge to work on a minimal design for the \"real\" Flowers.</p>",
+      "gallery": {
+        "caption": "Videos and Photographs courtesy of iart AG",
+        "media": [
+          "./projects/flower-meadow/vid_00001.mp4",
+          "./projects/flower-meadow/img_00001.png",
+          "./projects/flower-meadow/img_00002.png",
+          "./projects/flower-meadow/img_00005.png",
+          "./projects/flower-meadow/img_00003.png"
+        ]
+      }
     },
     {
       "title": "LeLa - Lernlabor",
@@ -76,10 +106,22 @@
         "path": "./projects/lela/01.png",
         "video": false,
         "caption": [
-          { "head": "Partner", "sub": "ZHDK E-Learning Department" },
-          { "head": "Tech", "sub": "SvelteKit, CockpitCMS" },
-          { "head": "Scope", "sub": "Frontend & Backend" },
-          { "head": "Year", "sub": "2020 - 2021" },
+          {
+            "head": "Partner",
+            "sub": "ZHDK E-Learning Department"
+          },
+          {
+            "head": "Tech",
+            "sub": "SvelteKit, CockpitCMS"
+          },
+          {
+            "head": "Scope",
+            "sub": "Frontend & Backend"
+          },
+          {
+            "head": "Year",
+            "sub": "2020 - 2021"
+          },
           {
             "head": "Link",
             "sub": "<a href='https://lela.ch' target='blank'>Website</a>"
@@ -87,11 +129,14 @@
         ]
       },
       "text": "<p>LeLa, the Learning Lab for Digital Skills in Higher Education, is a cooperation project of the five Zurich universities: ETH, PHZH, UZH, ZHAW, ZHdK. The swissuniversities federal project P8 aims to promote digital skills among university teachers. The learning lab works together on innovation processes in higher education didactics and development projects for digital skills of university teachers in the digital age.</p>",
-      "gallery": [
-        "./projects/lela/05.png",
-        "./projects/lela/06.png",
-        "./projects/lela/lela-mov.mp4"
-      ]
+      "gallery": {
+        "caption": "All media courtesy of Bureau 314",
+        "media": [
+          "./projects/lela/05.png",
+          "./projects/lela/06.png",
+          "./projects/lela/lela-mov.mp4"
+        ]
+      }
     },
     {
       "title": "Laptops in Space",
@@ -100,24 +145,39 @@
         "path": "./projects/laptops-in-space/lis-mov.mp4",
         "video": true,
         "caption": [
-          { "head": "Team", "sub": "Jonas Schell, Lukas Seiler" },
-          { "head": "Tech", "sub": "Threejs, Supabase, LiveKit, Svelte" },
-          { "head": "Scope", "sub": "Frontend Development, 3D Environment" },
-          { "head": "Year", "sub": "2020 - 2021" },
+          {
+            "head": "Team",
+            "sub": "Jonas Schell, Lukas Seiler"
+          },
+          {
+            "head": "Tech",
+            "sub": "Threejs, Supabase, LiveKit, Svelte"
+          },
+          {
+            "head": "Scope",
+            "sub": "Frontend Development, 3D Environment"
+          },
+          {
+            "head": "Year",
+            "sub": "2020 - 2021"
+          },
           {
             "head": "Link",
             "sub": "<a href='https://laptopsinspace.de' target='blank'>Laptops in Space</a>"
           }
         ]
       },
-      "text": "<p>With creativity against the crisis. As a team of three from Bremen, Hamburg and Basel we have tried to develop a positive, creative contribution with our means as an answer to the COVID-19 caused restrictions. We call the project \"Laptops in Space\". A bit like a mixture of video-call and computer game in 3D, with many positive side effects. The platform is free to use. But we also want to offer art, culture and education in particular a platform for digital events.</p><p><br />In LIS, you are placed as a laptop avatar in a 3D universe. You see the keyboard of your laptop cut out in front of you, as if you were looking out of the screen into the world. In LIS, this digital world is outer space. The space for a new world. An ab- tract, almost entirely black space in which one can move and look around as a laptop as in a computer game.</p><p><br />On the virtual laptop screens the webcam image of the visitors can be seen. In addition, you can hear the other visitors via their microphones. However, and this is the special feature, you can only hear the other person loudly and clearly if he or she is also in the vicinity of your own avatar. The further away you are from each other, the quieter the sound of this person becomes. All others in the vicinity, however, remain loud and clear. Thus, small conversation groups can quickly form, resulting in a typical acoustic bar atmosphere.</p><p><br />As much as one can say about the idea and the implementation - \"Laptops in Space\" is an immersive experience. You have to experience it once to understand which new dimension it means for digital events</p>",
-      "gallery": [
-        "./projects/laptops-in-space/01.png",
-        "./projects/laptops-in-space/02.png",
-        "./projects/laptops-in-space/03.png",
-        "./projects/laptops-in-space/04.png",
-        "./projects/laptops-in-space/05.png"
-      ]
+      "text": "<p>With creativity against the crisis. As a team of three from Bremen, Hamburg and Basel we have tried to develop a positive, creative contribution with our means as an answer to the COVID-19 caused restrictions. We call the project \"Laptops in Space\". A bit like a mixture of video-call and computer game in 3D, with many positive side effects. The platform is free to use. But we also want to offer art, culture and education in particular a platform for digital events.</p><p>In LIS, you are placed as a laptop avatar in a 3D universe. You see the keyboard of your laptop cut out in front of you, as if you were looking out of the screen into the world. In LIS, this digital world is outer space. The space for a new world. An ab- tract, almost entirely black space in which one can move and look around as a laptop as in a computer game.</p><p>On the virtual laptop screens the webcam image of the visitors can be seen. In addition, you can hear the other visitors via their microphones. However, and this is the special feature, you can only hear the other person loudly and clearly if he or she is also in the vicinity of your own avatar. The further away you are from each other, the quieter the sound of this person becomes. All others in the vicinity, however, remain loud and clear. Thus, small conversation groups can quickly form, resulting in a typical acoustic bar atmosphere.</p><p>As much as one can say about the idea and the implementation - \"Laptops in Space\" is an immersive experience. You have to experience it once to understand which new dimension it means for digital events</p>",
+      "gallery": {
+        "caption": "All media courtesy of Laptops in Space",
+        "media": [
+          "./projects/laptops-in-space/01.png",
+          "./projects/laptops-in-space/02.png",
+          "./projects/laptops-in-space/03.png",
+          "./projects/laptops-in-space/04.png",
+          "./projects/laptops-in-space/05.png"
+        ]
+      }
     },
     {
       "title": "Geoscope 2",
@@ -128,7 +188,7 @@
         "caption": [
           {
             "head": "Team",
-            "sub": "RUR Architects, Unidad de Protocolos, Princeton School of Architecture "
+            "sub": "Daniel López-Pérez, RUR Architects, Unidad de Protocolos, Princeton School of Architecture "
           },
           {
             "head": "Scope",
@@ -140,14 +200,17 @@
           }
         ]
       },
-      "text": "<p>Commemorating the 125th anniversary of R. Buckminster Fuller&rsquo;s birth, and celebrating the publication of R. Buckminster Fuller, Pattern- Thinking (Lars Müller Publishers, 2020), this exhibition traces Fuller's ambition to measure physical experience into an ever-expanding pattern of relationships and to coordinate these into a conceptual network of words and concepts that shaped the basis for his thinking.</p></br/><p>R. Buckminster Fuller, Pattern-Thinking follows Fuller&rsquo;s investigations of geometry, structure, language and intellectual property in their relation to design principles and pedagogy, organizing a survey of his work through parallel conceptual threads rather than in a linear chronology. Lines, models, words and concepts emerge as mediums from which to conceive of design as a process of translation, a search for new relationships and generalized principles that can contribute to transdisciplinary knowledge</p><br/><p>Pattern-Thinking comes to Princeton in the form of an immersive, inflatable, multimedia sphere occupied by the public and representing three different archives: Fuller at Princeton, Fuller and Design Education, and Fuller Today. It is a contemporary version of Fuller&rsquo;s Geoscope projects built alongside Princeton students during two different teaching appointments in 1953 and 1960.</p><br/><p>This installation was also shown at the Venice Architecture Biennial and at Roma campus Germany</p>",
-      "gallery": [
-        "./projects/geoscope/img_00001.jpg",
-        "./projects/geoscope/img_00002.jpg",
-        "./projects/geoscope/img_00003.jpg",
-        "./projects/geoscope/img_00004.jpg",
-        "./projects/geoscope/img_00005.jpg"
-      ]
+      "text": "<p>Commemorating the 125th anniversary of R. Buckminster Fuller&rsquo;s birth, and celebrating the publication of R. Buckminster Fuller, Pattern- Thinking (Lars Müller Publishers, 2020), this exhibition traces Fuller's ambition to measure physical experience into an ever-expanding pattern of relationships and to coordinate these into a conceptual network of words and concepts that shaped the basis for his thinking.</p><p>R. Buckminster Fuller, Pattern-Thinking follows Fuller&rsquo;s investigations of geometry, structure, language and intellectual property in their relation to design principles and pedagogy, organizing a survey of his work through parallel conceptual threads rather than in a linear chronology. Lines, models, words and concepts emerge as mediums from which to conceive of design as a process of translation, a search for new relationships and generalized principles that can contribute to transdisciplinary knowledge</p><p>Pattern-Thinking comes to Princeton in the form of an immersive, inflatable, multimedia sphere occupied by the public and representing three different archives: Fuller at Princeton, Fuller and Design Education, and Fuller Today. It is a contemporary version of Fuller&rsquo;s Geoscope projects built alongside Princeton students during two different teaching appointments in 1953 and 1960.</p><p>This installation was also shown at the Venice Architecture Biennial and at Roma campus Germany</p>",
+      "gallery": {
+        "caption": "Photographs courtesy of Daniel López-Pérez & Video courtesy Bureau 314",
+        "media": [
+          "./projects/geoscope/img_00001.jpg",
+          "./projects/geoscope/img_00002.jpg",
+          "./projects/geoscope/img_00003.jpg",
+          "./projects/geoscope/img_00004.jpg",
+          "./projects/geoscope/img_00005.jpg"
+        ]
+      }
     },
     {
       "title": "Talks & Courses",
@@ -173,11 +236,25 @@
             "head": "Mediafacade Workshop Korea",
             "subhead": "Workshop together with Valentin Spiess ( <a href=\"https://iart.ch\" target=\"blank\">iart</a> ) at INHA University Korea"
           },
-          {},
           {
             "year": 2020,
             "head": "Agile Methods",
             "subhead": "Workshop at ZHdK for Master Design Students"
+          },
+          {
+            "year": 2019,
+            "head": "Hyperspace",
+            "subhead": "Smartsetting Zurich, Talk"
+          },
+          {
+            "year": 2019,
+            "head": "Experience Design",
+            "subhead": "Workshop together with Martin Kovacovsky in St. Gallen"
+          },
+          {
+            "year": 2016,
+            "head": "Explorative Design",
+            "subhead": "Symposium at ZHdK"
           }
         ]
       }

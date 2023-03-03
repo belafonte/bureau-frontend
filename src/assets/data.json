@@ -25,6 +25,44 @@
       }
     },
     {
+      "title": "PARAT Physiotherapy Studio",
+      "subtitle": "Website, Frontend",
+      "media": {
+        "path": "./projects/parat/hero.png",
+        "video": false,
+        "caption": [
+          {
+            "head": "Client",
+            "sub": "Parat Physio Studio "
+          },
+          {
+            "head": "Tech",
+            "sub": "NextJS, StaticCMS"
+          },
+          {
+            "head": "Scope",
+            "sub": "Frontend & Backend"
+          },
+          {
+            "head": "Year",
+            "sub": "2022 - 2023"
+          },
+          {
+            "head": "Link",
+            "sub": "<a href='https://parat-studio.ch' target='blank'>Website</a>"
+          }
+        ]
+      },
+      "text": "<p>The newly founded physiotherapy studio PARAT approached me for the implementation of their website. It was important that the website is accessible in both German and English.</p><p>Based on a NextJS app I implemented these wishes. The language is set automatically depending on the browser settings. The content can be easily edited via StaticCMS in both languages.</p>",
+      "gallery": {
+        "caption": "All media courtesy Bureau 314",
+        "media": [
+          "./projects/parat/desktop.mp4",
+          "./projects/parat/mobile.mp4"
+        ]
+      }
+    },
+    {
       "title": "E-Learning ZHdK",
       "subtitle": "Website, Frontend",
       "media": {

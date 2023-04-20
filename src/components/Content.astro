@@ -40,9 +40,11 @@ import data from "@assets/data.json";
   main {
     margin: auto;
     max-width: 1024px;
-    column-count: 2;
-    column-gap: 10%;
     padding: 8rem 2rem;
+  }
+
+  main:nth-child(odd) {
+    width: 100px;
   }
 
   .spacer {
@@ -53,9 +55,6 @@ import data from "@assets/data.json";
     main {
       margin: auto;
       max-width: 100%;
-      column-count: 1;
-      column-gap: 0rem;
-
       padding: 0 1rem;
     }
 

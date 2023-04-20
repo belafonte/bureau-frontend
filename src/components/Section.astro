@@ -65,7 +65,7 @@ const { title, subtitle = null, media, text = null } = Astro.props;
     width: 100%;
     display: inline-block;
     translate: 0 -30px;
-    opacity: 1;
+    opacity: 0;
   }
 
   page-section.fadeIn {
@@ -76,6 +76,23 @@ const { title, subtitle = null, media, text = null } = Astro.props;
     translate: 0 0;
   }
 
+  page-section:nth-child(even) {
+    width: 100%;
+  }
+  page-section:nth-child(odd) {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  @media screen and (min-width: 768px) {
+    page-section:nth-child(even) {
+      width: 40%;
+    }
+    page-section:nth-child(odd) {
+      width: 40%;
+      margin-left: 45%;
+    }
+  }
   @keyframes fadeIn {
     0% {
       opacity: 0;
